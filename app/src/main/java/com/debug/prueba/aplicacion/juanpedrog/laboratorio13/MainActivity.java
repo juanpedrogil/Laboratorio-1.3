@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
     float numeroRandom;
     int i=0;
     boolean para=true;
+    int tiempo=500;
     float[] numeros={1f,1.1f,1.2f,1.3f,1.4f,1.5f,1.6f,1.7f,1.8f,1.9f,2f,2.1f,
                     2.2f,2.3f,2.4f,2.5f,2.6f,2.7f,2.8f,2.9f,3f,3f};
     @Override
@@ -70,15 +71,17 @@ public class MainActivity extends AppCompatActivity {
                                 else{
                                     if(numeros[i-1]==numeroRandom){
                                         txtRes.setText("Bien hecho");
+                                        tiempo=tiempo-50;
                                     }else {
                                         txtRes.setText("Intentalo de nuevo");
+                                        tiempo=500;
                                     }
                                 }
                             }
                         });
                     }
                 },
-                500
+                tiempo
         );
     }
 }
